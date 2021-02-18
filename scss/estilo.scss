@@ -1,0 +1,265 @@
+/*npm run watch-css PARA EJECUTAR EN CONSOLA*/ 
+
+$miGris:  #7C7C7C;
+
+
+@font-face {
+    font-family: katana;
+    src: url(../assets/font/Katanf.ttf);
+}
+
+.columna {
+    margin: 0;
+    padding: 0;
+}
+
+.titulo {
+    font-family: katana;
+    color: black;
+    margin: 20px 0 10px 0;
+}
+
+/*HEADER COMIENZO*/
+
+.header__texto {
+    font-family: katana;
+    font-size: 23px;
+    color: white;
+    transition: all 0.5s;
+}
+
+.header__texto:hover{
+    color:$miGris;
+}
+/*HEADER FIN*/
+
+
+/*INDEX COMIENZO*/
+
+.contenedor__index {
+    width: 100%;
+    height: 250px;
+    background-image: url(../assets/Imagen-fondo-index.jpg);
+    background-size:cover;
+    animation-name: efecto-contenedor-index;
+    animation-duration: 1.5s;
+
+
+    .contenedor__index__texto {
+        font-family: katana;
+        font-size: 30px;
+    }
+    
+}
+
+
+/*INDEX FIN*/
+
+/*NOSTRXS COMIENZO*/
+
+.nosotros__texto{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 26px;
+}
+
+.nosotros__contenedor__img-efecto{
+    animation-name: efecto-nosotros;
+    animation-duration: 1.5s;
+    animation-iteration-count: initial;
+    animation-fill-mode: unset;
+}
+
+@keyframes efecto-nosotros{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+/*NOSTRXS FIN*/
+
+/*PRODUCTOS COMIENZO*/
+
+@for $i from 1 through 3{
+    .productos__img--efecto-#{$i}{
+        animation-name: efecto-img-productos;
+        animation-duration: #{$i / 2}s;
+        height: 320px;}
+    
+    .productos__img--efecto-#{$i}:hover{
+        transition-duration: 0.3s;
+        transform: scale(1.03);
+    }
+
+}
+
+@keyframes efecto-img-productos {
+    0% {
+       opacity: 0;
+       transform: translatey(60px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+}
+
+.productos__titulo{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 38px;
+}
+
+.productos__precio{
+    font-size: 25px;
+}
+
+/*PRODUCTOS FIN*/
+
+/*DISEÑOS COMIENZO*/
+
+
+.disenio {
+    position: relative;
+
+    .disenio__img {
+        margin: 20px 0 10px 0;
+        animation-name: efecto-disenios;
+        animation-timing-function: initial;
+        animation-duration: 2s;
+        animation-direction: normal;
+    }
+
+    .disenio__contenedor__click {
+        position: absolute;
+        top: 0;
+        width: 92%;
+        height: 92%;
+        margin-top: 20px;
+        opacity: 0%;
+        background-color: black;
+        transition: all 0.6s;
+
+        .disenio__texto {
+            margin-top: 50%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+    }
+}
+
+@keyframes efecto-disenios {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}
+}
+
+
+/*DISEÑOS FIN*/
+
+
+/*CONTACTO COMIENZO*/
+
+#enviar {
+    color: white;
+    background-color:$miGris;
+    box-shadow: black 5px 5px;
+    width: 100px;
+    text-align: left;
+}
+
+#enviar:hover{
+    background-color: rgb(75, 75, 75);
+}
+
+#enviar:active{
+    background-color:#666666;
+}
+
+/*CONTACTO FIN*/
+
+/*FOOTER COMIENZO*/
+
+.footer__logo--tam {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 10px;
+}
+
+.footer__texto {
+    color: white;
+    font-family: calibri;
+    font-size: 13px;
+}
+
+/*FOOTER FIN*/
+
+@media only screen and (max-width: 768px) {
+
+    .header__logo--tam {
+        width: 160px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*NOSTRXS COMIENZO*/
+
+    .nosotros__texto{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+    }
+
+    .nosotros__contenedor__img-efecto{
+        margin-top: 15px;
+    }
+
+    /*NOSTRXS FIN*/
+
+    .productos__titulo{
+        font-size: 30px;
+    }
+
+    .productos__precio{
+        font-size: 20px;
+    }
+
+    .footer__logo--tam {
+        margin: 15px 10px 15px 10px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .contenedor__index {
+        width: 100%;
+        height: 350px;
+        background-image: url(../assets/Imagen-fondo-index.jpg);
+        background-size:cover;
+
+        .contenedor__index__texto {        
+            font-family: katana;
+            font-size: 40px;}
+    }
+
+    @keyframes efecto-contenedor-index {
+        0% {
+           opacity: 0;
+           transform: translateX(100px);
+        }
+        100% {
+           opacity: 1;
+           transform: translateX(0);
+        }
+    }
+
+    .contacto__formulario {
+        position: relative;
+        top: -20px;
+    }
+
+    .contenedor__footer {
+        height: 63px;
+    }
+
+}
